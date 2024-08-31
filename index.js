@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(`${process.env.MONGODB_URI}`);
 const app = express();
 
 app.use(cors({
