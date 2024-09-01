@@ -11,5 +11,8 @@
   },
   "scripts": {
     "start": "node index.js"
-  }
+  },
+  "name": "my-express-app",
+  "version": "1.0.0",
+  "main": "index.js"
 }
