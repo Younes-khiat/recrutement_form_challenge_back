@@ -11,7 +11,7 @@ const app = express();
 const port = 3002;
 
 app.use(cors({
-  origin: 'http://localhost:3000' ,
+  origin: 'https://recrutement-form-challenge-back-2.onrender.com' ,
 
 }));
 app.use((bodyParser.json()));
