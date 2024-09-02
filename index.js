@@ -19,7 +19,7 @@ app.use(cors({
 
 app.use(express.json());
 
-// app.use('/',userRouter);
+app.use('/',userRouter);
 
 
 app.listen(port, () => {
