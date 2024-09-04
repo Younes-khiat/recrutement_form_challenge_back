@@ -38,9 +38,9 @@ app.use(express.json());
 
 app.post('/register', async (req, res) => {
   console.log(12);
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.header('Access-Control-Allow-Methods', 'POST');
+    // res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    // res.header('Access-Control-Allow-Methods', 'POST');
     try {
       const userData = (req.body);
       const user = new users(userData);
