@@ -7,7 +7,6 @@ const path = require('path'); // Make sure to include path
 
 const cors = require('cors');
 require('dotenv').config();
-const userRouter = require('./routes/users');
 
 mongoose.connect(`${process.env.MONGODB_URI}`).catch(error => {
   console.error('Error connecting to MongoDB:', error);
@@ -37,7 +36,21 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use('/',userRouter);
+app.post('/register', async (req, res) => {
+  console.log(12);
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Methods', 'POST');
+    try {
+      const userData = (req.body);
+      const user = new users(userData);
+      await user.save();
+      res.status(201).json(user);
+    } catch (err) {
+      console.error(err);
+      res.status(400).json({ message: err.message });
+    }
+  });
 
 app.get('/', (req, res) => {
     res.render('index'); // Renders views/index.ejs
