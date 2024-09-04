@@ -11,7 +11,7 @@ app.use(express.json());
 // app.set('views', 'views');
 
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Welcome to the API' });
+    res.send('Hello, World!');
 });
 
 app.listen(port, () => {
