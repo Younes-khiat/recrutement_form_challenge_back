@@ -39,6 +39,10 @@ app.use(express.json());
 
 app.use('/',userRouter);
 
+app.get('/', (req, res) => {
+    res.render('index'); // Renders views/index.ejs
+});
+
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
