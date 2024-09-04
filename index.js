@@ -1,18 +1,20 @@
 const express = require('express');
-// const ejs = require('ejs');
 
 const app = express();
 const port = process.env.PORT || 3002;
 
 app.use(express.json());
 
-// // Configure EJS
-// app.set('view engine', 'ejs');
-// app.set('views', 'views');
-
+// Configure EJS
+app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
+    res.render('index.ejs'); // Ensure you provide the correct extension
 });
+
+
+// app.get('/', (req, res) => {
+//     res.send('Hello, World!');
+// });
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
