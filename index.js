@@ -11,11 +11,6 @@ mongoose.connect(`${process.env.MONGODB_URI}`).catch(error => {
   console.error('Error connecting to MongoDB:', error);
 });
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
-console.log('Views directory:', path.join(__dirname, 'views'));
-
-app.set('views', path.join(__dirname, 'views')); // Explicitly set views directory
 
 const app = express();
 const port = 3002;
@@ -26,6 +21,13 @@ app.use(cors({
   credentials: true,
 
 }));
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+console.log('Views directory:', path.join(__dirname, 'views'));
+
+app.set('views', path.join(__dirname, 'views')); // Explicitly set views directory
+
 
 
 app.use(express.json());
