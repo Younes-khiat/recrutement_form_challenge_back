@@ -14,6 +14,14 @@ mongoose.connect(`${process.env.MONGODB_URI}`).catch(error => {
 
 const app = express();
 const port = 3002;
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
+console.log('Views directory:', path.join(__dirname, 'views'));
+
+app.set('views', path.join(__dirname, 'views')); // Explicitly set views directory
+
+
 const allowedOrigins = ['https://recrutement-form-challenge-front.vercel.app'];
 app.use(cors({
   origin: allowedOrigins,
@@ -22,11 +30,6 @@ app.use(cors({
 
 }));
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
-console.log('Views directory:', path.join(__dirname, 'views'));
-
-app.set('views', path.join(__dirname, 'views')); // Explicitly set views directory
 
 
 
