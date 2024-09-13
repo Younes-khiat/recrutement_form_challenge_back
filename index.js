@@ -4,7 +4,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path'); // Make sure to include path
-
+const users = require('./models/users');
 const cors = require('cors');
 require('dotenv').config();
 
@@ -23,7 +23,10 @@ console.log('Views directory:', path.join(__dirname, 'views'));
 app.set('views', path.join(__dirname, 'views')); // Explicitly set views directory
 
 
-const allowedOrigins = ['https://recrutement-form-challenge-front-beta.vercel.app'];
+const allowedOrigins = [
+  'https://recrutement-form-challenge-front-beta.vercel.app', 
+  'https://recrutement-form-challenge-front.vercel.app'
+];
 app.use(cors({
   origin: allowedOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -43,6 +46,8 @@ app.post('/register', async (req, res) => {
     // res.header('Access-Control-Allow-Methods', 'POST');
     try {
       const userData = (req.body);
+
+      
       const user = new users(userData);
       await user.save();
       res.status(201).json(user);
