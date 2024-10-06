@@ -35,7 +35,7 @@ const user = mongoose.Schema({
         required: true
     },
     scientificInterests:{
-        type: Array,
+        type: Object,
         required: true
     },
     relevantExperiences:{
