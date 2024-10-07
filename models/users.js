@@ -40,9 +40,11 @@ const user = mongoose.Schema({
     },
     relevantExperiences:{
         type: String,
+        required: true
     },
     whyJoin:{
-        type: String
+        type: String,
+        required: true
     }
 });
 const users = mongoose.model('users', user);
