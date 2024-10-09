@@ -1,7 +1,4 @@
-
-
-
-const express = require('express');
+const express = require ('express');
 const mongoose = require('mongoose');
 const path = require('path'); // Make sure to include path
 const users = require('./models/users');
@@ -29,9 +26,6 @@ app.use(cors({
   credentials: true,
 
 }));
-
-
-
 
 app.use(express.json());
 
