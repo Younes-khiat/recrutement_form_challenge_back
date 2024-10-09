@@ -25,6 +25,7 @@ app.set('views', path.join(__dirname, 'views')); // Explicitly set views directo
 app.use(cors({
   origin: 'https://recrutement-form-challenge-front-qbaal1hfy.vercel.app', // Add your frontend URL here
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'], // Explicit allowed headers
   credentials: true,
 
 }));
