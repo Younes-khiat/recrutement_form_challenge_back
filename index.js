@@ -23,7 +23,7 @@ console.log('Views directory:', path.join(__dirname, 'views'));
 app.set('views', path.join(__dirname, 'views')); // Explicitly set views directory
 
 app.use(cors({
-  origin: 'https://recrutement-form-challenge-front-qbaal1hfy.vercel.app', // Add your frontend URL here
+  origin: /https:\/\/recrutement-form-challenge-front-[^.]+\.vercel\.app$/,  // Allow any subdomain of vercel.app
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'], // Explicit allowed headers
   credentials: true,
